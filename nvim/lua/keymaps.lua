@@ -56,3 +56,10 @@ map("n", "<leader>gt", function()
 	vim.fn.termopen(vim.o.shell)
 	vim.cmd("startinsert")
 end, { desc = "Toggle terminal" })
+
+map("n", "<leader>fa", function()
+	require("telescope.builtin").find_files({
+		hidden = true,
+		no_ignore = true,
+	})
+end)
